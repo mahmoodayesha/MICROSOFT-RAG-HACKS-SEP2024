@@ -103,7 +103,7 @@ export default function Home() {
     fontFamily: 'Roboto, sans-serif', color: '#bbbbbb',
     textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
   }}>
-    Your ultimate tool for exploring and extracting information from PDFs. Ask any questions about the PDF content, and get answers instantly!
+    Instantly get answers from your PDFs. Supports visual, auditory, and kinesthetic learning with interactive diagrams, audio summaries, and hands-on quizzes.
 
   </Typography>
   <Box
@@ -137,64 +137,95 @@ export default function Home() {
 </Container>
 
 
-    {/* Features Section */}
-    <Container maxWidth="lg" sx={{ marginBottom: 12 }}>
-      <Grid container spacing={6} textAlign="center">
-        <Grid item xs={12} sm={4}>
-          <Box sx={{
-            bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
-            height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' }
-          }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
-              color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
-            }}>
-              Personalized Recommendations
-            </Typography>
-            <Typography color="textSecondary" sx={{
-              color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)'
-            }}>
-              Get information from your PDF tailored to your queries.
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Box sx={{
-            bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
-            height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' }
-          }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
-              color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
-            }}>
-             Comprehensive PDF Insights 
 
-            </Typography>
-            <Typography color="textSecondary" sx={{
-              color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)'
-            }}>
-              Explore detailed insights from your PDF and find exactly what you need.
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Box sx={{
-            bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
-            height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' }
-          }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
-              color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
-            }}>
-              Smart Summaries
+{/* Features Section */}
+<Container maxWidth="lg" sx={{ marginBottom: 12 }}>
+  <Grid container spacing={6} textAlign="center">
+    {/* Visual Learners */}
+    <Grid item xs={12} sm={4}>
+      <Box sx={{
+        bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+        height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' },
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+      }}>
+        <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
+          color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
+        }}>
+          Visual Learning
+        </Typography>
+        <Typography color="textSecondary" sx={{
+          color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)', mb: 2
+        }}>
+          Engage with interactive diagrams, charts, and infographics to visualize complex concepts and data.
+        </Typography>
+        <Button 
+          variant="contained" 
+          sx={{ bgcolor: 'orange', color: 'white', borderRadius: '30px', padding: '10px 20px', fontSize: '16px', textTransform: 'none', mt: 2 }}
+          onClick={() => window.location.href='/visual-learning'} // Navigate to the visual learning page
+        >
+          Explore Visual Features
+        </Button>
+      </Box>
+    </Grid>
 
-            </Typography>
-            <Typography color="textSecondary" sx={{
-              color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)'
-            }}>
-              Receive concise summaries of complex sections to quickly understand the key points.
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+    {/* Auditory Learners */}
+    <Grid item xs={12} sm={4}>
+      <Box sx={{
+        bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+        height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' },
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+      }}>
+        <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
+          color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
+        }}>
+          Auditory Learning
+        </Typography>
+        <Typography color="textSecondary" sx={{
+          color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)', mb: 2
+        }}>
+          Access audio summaries and spoken explanations for a deeper understanding through listening.
+        </Typography>
+        <Button 
+          variant="contained" 
+          sx={{ bgcolor: 'orange', color: 'white', borderRadius: '30px', padding: '10px 20px', fontSize: '16px', textTransform: 'none', mt: 2 }}
+          onClick={() => window.location.href='/auditory-learning'} // Navigate to the auditory learning page
+        >
+          Explore Audio Features
+        </Button>
+      </Box>
+    </Grid>
+
+    {/* Kinesthetic Learners */}
+    <Grid item xs={12} sm={4}>
+      <Box sx={{
+        bgcolor: '#1e1e1e', borderRadius: '15px', padding: 4, boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+        height: '120%', transition: 'transform 0.3s, box-shadow 0.3s', ':hover': { transform: 'scale(1.05)', boxShadow: '0 12px 30px rgba(0, 0, 0, 0.5)' },
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+      }}>
+        <Typography variant="h5" fontWeight="bold" gutterBottom sx={{
+          color: 'orange', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 8px rgba(233, 30, 99, 0.6)'
+        }}>
+          Kinesthetic Learning
+        </Typography>
+        <Typography color="textSecondary" sx={{
+          color: '#bbbbbb', fontFamily: 'Roboto, sans-serif', textShadow: '0 0 5px rgba(255, 255, 255, 0.5)', mb: 2
+        }}>
+          Engage with interactive quizzes and simulations to learn through hands-on activities and practice.
+        </Typography>
+        <Button 
+          variant="contained" 
+          sx={{ bgcolor: 'orange', color: 'white', borderRadius: '30px', padding: '10px 20px', fontSize: '16px', textTransform: 'none', mt: 2 }}
+          onClick={() => window.location.href='/kinesthetic-learning'} 
+        >
+          Explore Kinesthetic Features
+        </Button>
+      </Box>
+    </Grid>
+  </Grid>
+</Container>
+
+
+
 
     {/* Footer */}
     <Footer />

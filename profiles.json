@@ -1,0 +1,85 @@
+{
+    "profiles": [
+      {
+        "name": "Alice Johnson",
+        "experience": [
+          {
+            "title": "Software Engineer",
+            "company": "TechCorp Inc.",
+            "duration": "3 years"
+          },
+          {
+            "title": "Junior Developer",
+            "company": "WebWorks Solutions",
+            "duration": "2 years"
+          }
+        ],
+        "skills": ["JavaScript", "React", "Node.js", "CSS"]
+      },
+      {
+        "name": "Michael Smith",
+        "experience": [
+          {
+            "title": "Marketing Manager",
+            "company": "Creative Media Co.",
+            "duration": "5 years"
+          },
+          {
+            "title": "Marketing Specialist",
+            "company": "AdVenture Ltd.",
+            "duration": "3 years"
+          }
+        ],
+        "skills": ["Digital Marketing", "SEO", "Content Strategy", "Google Analytics"]
+      },
+      {
+        "name": "Laura Brown",
+        "experience": [
+          {
+            "title": "Project Manager",
+            "company": "BuildRight Construction",
+            "duration": "4 years"
+          },
+          {
+            "title": "Assistant Project Manager",
+            "company": "Urban Developers",
+            "duration": "2 years"
+          }
+        ],
+        "skills": ["Project Management", "Budgeting", "Team Leadership", "Risk Management"]
+      },
+      {
+        "name": "James Williams",
+        "experience": [
+          {
+            "title": "Data Scientist",
+            "company": "Insight Analytics",
+            "duration": "3 years"
+          },
+          {
+            "title": "Data Analyst",
+            "company": "DataPros Inc.",
+            "duration": "2 years"
+          }
+        ],
+        "skills": ["Python", "R", "Machine Learning", "Data Visualization"]
+      },
+      {
+        "name": "Daniel Lee",
+        "experience": [
+          {
+            "title": "Cybersecurity Specialist",
+            "company": "SecureNet Inc.",
+            "duration": "5 years"
+          },
+          {
+            "title": "IT Security Analyst",
+            "company": "TechGuard Solutions",
+            "duration": "3 years"
+          }
+        ],
+        "skills": ["Cybersecurity", "Network Security", "Ethical Hacking", "Risk Assessment"]
+      }
+    ]
+  }
+  

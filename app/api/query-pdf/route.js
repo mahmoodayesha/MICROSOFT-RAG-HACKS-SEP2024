@@ -14,10 +14,8 @@ export async function POST(req) {
       );
     }
 
-    // Hugging Face Inference API for Embeddings
     const hf = new HfInference(process.env.HUGGINGFACE_API_KEY);
 
-    // Generate embeddings using Hugging Face
     const embeddingsResponse = await hf.featureExtraction({
       model: 'intfloat/multilingual-e5-large',
       inputs: resume,
@@ -25,32 +23,27 @@ export async function POST(req) {
 
     console.log('Embeddings Response:', embeddingsResponse);
 
-    // Check and process embeddings
     let vector;
     if (Array.isArray(embeddingsResponse)) {
-      vector = embeddingsResponse; // Use the embeddings directly if it's an array
+      vector = embeddingsResponse;
     } else {
       throw new Error('Unexpected embeddings format from Hugging Face API');
     }
 
-    // Verify dimensions of the embeddings
     if (vector.length !== 1024) {
       throw new Error(`Vector dimension ${vector.length} does not match the dimension of the index 384`);
     }
 
     console.log('Processed vector:', vector);
 
-    // Pinecone client initialization
     const pinecone = new PineconeClient({ apiKey: process.env.PINECONE_API_KEY });
 
-    // Create index and insert embeddings into Pinecone
-    const index = pinecone.Index('hackathon'); // Replace with your Pinecone index name
+    const index = pinecone.Index('hackathon'); 
 
     await index.upsert([{ id: 'document1', values: vector, metadata: { text: resume } }]);
 
     console.log('Embeddings inserted into Pinecone');
 
-    // Query Pinecone with the question
     const queryEmbeddingResponse = await hf.featureExtraction({
       model: 'intfloat/multilingual-e5-large',
       inputs: question,
@@ -60,18 +53,17 @@ export async function POST(req) {
 
     let queryVector;
     if (Array.isArray(queryEmbeddingResponse)) {
-      queryVector = queryEmbeddingResponse; // Use the embeddings directly if it's an array
+      queryVector = queryEmbeddingResponse;
     } else {
       throw new Error('Unexpected query embedding format from Hugging Face API');
     }
 
-    // Verify dimensions of the query embeddings
     if (queryVector.length !== 1024) {
       throw new Error(`Query vector dimension ${queryVector.length} does not match the dimension of the index 384`);
     }
 
     const queryResponse = await index.query({
-      topK: 3, // Get the top 3 results
+      topK: 3,
       vector: queryVector,
       includeMetadata: true,
     });
@@ -98,7 +90,6 @@ export async function POST(req) {
       .replace('{{resume}}', resume)
       .replace('{{question}}', question);
 
-    // Call OpenAI API to generate the answer
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });

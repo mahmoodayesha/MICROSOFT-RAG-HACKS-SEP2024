@@ -1,8 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-import {ClerkProvider, SignedIn, SignedOut, SignInButton, SignOutButton,UserButton } from '@clerk/nextjs'
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,18 +13,19 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "PDF Query Quest",
+  title: "Query PDF",
   description: "Upload a PDF or ask a question related to the content.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="https://www.svgrepo.com/show/255818/pdf.svg" type="image/x-icon" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
+    </html>
   );
 }
